@@ -1,0 +1,10 @@
+deploymentName: helm-chart
+replicaCount: 3
+containerPort: 80
+image:
+  repo: us-central1-docker.pkg.dev/kubernetes-class-aselnur/python-app/python-app
+  tag: 250bb5a1c9166c6fb7ecd2f8f94c782a3b9d248b
+serviceName: helm-svc
+serviceType: LoadBalancer
+servicePort: 80
+serviceAccount: helm-sa
