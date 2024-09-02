@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: {{ .Values.deploymentName }}
   labels:
-    app: python
+{{- include "commonLabels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: python
+{{- include "commonLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        app: python
+{{- include "commonLabels" . | nindent 8 }}
     spec:
       serviceAccountName: {{ .Values.serviceAccount }}
       containers:
